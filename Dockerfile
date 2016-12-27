@@ -14,7 +14,8 @@ RUN mkdir -p /run/apache2
 
 RUN mkdir -p /run/apache2 && \
 	sed -i "s/ErrorLog .*/ErrorLog \/dev\/stdout/g" /etc/apache2/httpd.conf && \
-	sed -i "s/CustomLog .* combined/CustomLog \/dev\/stdout combined/g" /etc/apache2/httpd.conf
+	sed -i "s/CustomLog .* combined/CustomLog \/dev\/stdout combined/g" /etc/apache2/httpd.conf && \
+	sed -i "s/DirectoryIndex .*/DirectoryIndex index.php index.html/g" /etc/apache2/httpd.conf
 
 ENV PHPPGADMIN_VERSION=5.1
 RUN cd /var/www/localhost/htdocs/ && \
