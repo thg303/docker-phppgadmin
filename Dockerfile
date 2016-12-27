@@ -2,7 +2,7 @@ FROM alpine:3.4
 MAINTAINER Nadim
 
 # Install webserver
-RUN apk update
+RUN echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && apk update
 RUN apk add tar curl vim
 
 RUN apk add apache2 php5-apache2 php5-pgsql postgresql
