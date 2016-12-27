@@ -5,7 +5,7 @@ MAINTAINER Nadim
 RUN apk update
 RUN apk add tar curl vim
 
-RUN apk add apache2 php5-apache2 php5-pgsql postgresql-client
+RUN apk add apache2 php5-apache2 php5-pgsql postgresql
 RUN mkdir -p /run/apache2
 
 RUN mkdir -p /run/apache2 && \
