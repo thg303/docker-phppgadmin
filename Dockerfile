@@ -5,7 +5,7 @@ MAINTAINER Nadim
 RUN echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && apk update
 RUN apk add tar curl vim
 
-RUN apk add apache2 php5-apache2 php5-pgsql postgresql
+RUN apk add apache2 php5-apache2 php5-pgsql "postgresql@edge<9.7"
 RUN mkdir -p /run/apache2
 
 RUN mkdir -p /run/apache2 && \
