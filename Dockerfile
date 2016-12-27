@@ -13,9 +13,9 @@ RUN mkdir -p /run/apache2 && \
 	sed -i "s/CustomLog .* combined/CustomLog \/dev\/stdout combined/g" /etc/apache2/httpd.conf && \
 	sed -i "s/DirectoryIndex .*/DirectoryIndex index.php index.html/g" /etc/apache2/httpd.conf
 
-ENV PHPPGADMIN_VERSION=5.1
+ENV PHPPGADMIN_VERSION=c7c6beb7d9f98ff50c0efa3911f1a2d86a5eed95
 RUN cd /var/www/localhost/htdocs/ && \
-    curl -L http://downloads.sourceforge.net/phppgadmin/phpPgAdmin-${PHPPGADMIN_VERSION}.tar.gz?download | tar xzvf - --strip-components=1 -C ./ && \
+    curl -L https://github.com/phppgadmin/phppgadmin/archive/${PHPPGADMIN_VERSION}.tar.gz | tar xzvf - --strip-components=1 -C ./ && \
     cp /var/www/localhost/htdocs/conf/config.inc.php-dist /var/www/localhost/htdocs/conf/config.inc.php && \
     chmod -R 777 /var/www/localhost/htdocs/
 
