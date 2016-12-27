@@ -4,12 +4,8 @@ MAINTAINER Nadim
 # Install webserver
 RUN apk update
 RUN apk add tar curl vim
-#RUN apk add apache2 php5-apache2 php5-pgsql
-#RUN apk add apache2 php5-apache2 php5-common php5-iconv php5-json php5-gd php5-curl php5-xml php5-pgsql \
-#			php5-pdo php5-pdo_pgsql php5-posix php5-mcrypt php5-gettext php5-ctype php5-dom \
-#			php5-pgsql
 
-RUN apk add apache2 php5-apache2 php5-pgsql
+RUN apk add apache2 php5-apache2 php5-pgsql postgresql-client
 RUN mkdir -p /run/apache2
 
 RUN mkdir -p /run/apache2 && \
