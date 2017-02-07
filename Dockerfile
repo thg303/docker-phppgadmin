@@ -22,5 +22,7 @@ RUN cd /var/www/localhost/htdocs/ && \
 EXPOSE 80
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
+RUN mkdir /out
+VOLUME ["/out"]
 
 CMD ["/start.sh"]
